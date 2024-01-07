@@ -20,7 +20,20 @@ const getReact = function () {
     return c;
   };
 
-  return { useState, render };
+  const useEffect = (callback, dependency) => {
+    const oldDep = hooks[index];
+    let hasChanged = true;
+    if (oldDep) {
+      hasChanged = dependency.some((dep, i) => !Object.is(dep, oldDep[i]));
+    }
+    if (hasChanged) {
+      callback();
+    }
+    hooks[index] = dependency;
+    index++;
+  };
+
+  return { useState, render, useEffect };
 };
 
 const React = getReact();
