@@ -1,4 +1,15 @@
+const sleep = (time) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("inside promise");
+      resolve();
+    }, time);
+  });
+};
+
 console.log("hi");
+
+sleep(30);
 
 setTimeout(() => {
   console.log("Mina");
@@ -12,6 +23,6 @@ console.log("hello");
 
 setTimeout(() => {
   console.log("Momo");
-}, 0);
+}, 60);
 
 console.log("heyyyy");
