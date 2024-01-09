@@ -44,7 +44,7 @@ count = 20;
 console.log(add());
 console.log(add()); */
 
-/* function getAdd() {
+function getAdd() {
   let count = 0;
 
   const inner = () => {
@@ -62,4 +62,4 @@ console.log(add());
 console.log(add());
 count = 20;
 console.log(add());
-console.log(add()); */
+console.log(add());
