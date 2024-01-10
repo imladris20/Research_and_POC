@@ -1,0 +1,24 @@
+.wrap {
+  border: 1px solid red;
+  width: 960px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-content: center; */
+}
+.item {
+  background-color: pink;
+  width: 30%;
+  border: 1px dotted lightblue;
+}
+
+.item-3 {
+  align-self: flex-end;
+}
+
+h1 {
+  margin: 0;
+}
