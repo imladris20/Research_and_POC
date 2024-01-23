@@ -9,8 +9,11 @@ const arr3 = origin3.map((_, index) => index);
 const arr4 = [1];
 arr4.length = 5;
 
-//* 猜猜以下四個console.log結果會是如何
+const arr5 = Array.from({ length: 5 }, () => "empty");
+
+//* 猜猜以下五個console.log結果會是如何
 console.log("arr1:", arr1);
 console.log("arr2:", arr2);
 console.log("arr3:", arr3);
 console.log("arr4:", arr4);
+console.log("arr5:", arr5);
