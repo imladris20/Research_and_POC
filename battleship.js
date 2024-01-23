@@ -16,8 +16,9 @@ const placeShip = (index, direction) => {
           }
           chessBoard[y][x + i] = 1;
         }
+        return true;
       }
-      return;
+      return false;
     }
     case "west": {
       if (x - 3 >= 0) {
@@ -27,8 +28,9 @@ const placeShip = (index, direction) => {
           }
           chessBoard[y][x - i] = 1;
         }
+        return true;
       }
-      return;
+      return false;
     }
     case "south": {
       if (y + 3 <= 6) {
@@ -38,8 +40,9 @@ const placeShip = (index, direction) => {
           }
           chessBoard[y + i][x] = 1;
         }
+        return true;
       }
-      return;
+      return false;
     }
     case "north": {
       if (y - 3 >= 0) {
@@ -49,17 +52,26 @@ const placeShip = (index, direction) => {
           }
           chessBoard[y - i][x] = 1;
         }
+        return true;
       }
-      return;
+      return false;
     }
   }
 };
 
 console.log("initial: ", chessBoard);
 
-placeShip([3, 2], "east");
-placeShip([7, 1], "west");
-placeShip([0, 3], "north");
-placeShip([1, 3], "south");
+if (!placeShip([3, 2], "east")) {
+  console.log("Failed to place ship at [3, 2]");
+}
+if (!placeShip([7, 1], "west")) {
+  console.log("Failed to place ship at [7, 1]");
+}
+if (!placeShip([0, 3], "north")) {
+  console.log("Failed to place ship at [0, 3]");
+}
+if (!placeShip([1, 3], "south")) {
+  console.log("Failed to place ship at [1, 3]");
+}
 
 console.log("After place ships: ", chessBoard);
