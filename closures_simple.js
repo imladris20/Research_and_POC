@@ -4,21 +4,26 @@ function init() {
   function fireMessage() {
     console.log(message);
   }
-  return message;
+  return fireMessage;
 }
 
 const print = init();
 
 print();
 
-function makeAdder(x) {
-  return function (y) {
-    return x + y;
-  };
+//* add5 與 add10 都是閉包。他們共享函式的定義，卻保有不同的環境
+//* 在 add5 的作用域環境，base 是 5。而在 add10 的作用域環境， base 則是 10。
+
+function makeAdder(base) {
+  function inner(input) {
+    return base + input;
+  }
+
+  return inner;
 }
 
-var add5 = makeAdder(5);
-var add10 = makeAdder(10);
+const add5 = makeAdder(5);
+const add10 = makeAdder(10);
 
-console.log(add5(2)); // 7
-console.log(add10(2)); // 12
+console.log(add5(2));
+console.log(add10(2));
