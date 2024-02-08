@@ -1,10 +1,14 @@
+//! 為什麼閉包是一件神奇的事情？
+//* 因為照理說，一個 function 執行完成以後本來會把所有相關的資源釋放掉。
+//* 但是 init 已經執行結束了。照理來說變數 message 的記憶體空間也應該被釋放，但我呼叫 inner 時居然還是存取得到 message！
+//* message 這個變數已經被「關在」 inner 這個 function 裡面了，所以只要 inner 還存在的一天，message 就只能一直被關在裡面。
 function init() {
   let message = "JSClosures";
 
-  function fireMessage() {
+  function inner() {
     console.log(message);
   }
-  return fireMessage;
+  return inner;
 }
 
 const print = init();
