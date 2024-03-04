@@ -19,7 +19,15 @@ function App() {
       <button className="firstBtn" onClick={() => setNumber(9)}>
         setNumber to 9
       </button>
-      <button className="btn" onClick={() => setNumber(10)}>
+      <button
+        className="btn"
+        onClick={() => {
+          setNumber(10);
+          setNumber(11);
+          setNumber(10);
+          console.log(number);
+        }}
+      >
         setNumber to 10
       </button>
       <h1>{message}</h1>
