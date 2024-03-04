@@ -11,8 +11,9 @@ function App() {
 
   return (
     <>
-      <h1>Here is father component</h1>
+      <h1>Here is Father Component.</h1>
       <Child />
+      {console.log("C: father conosle.log in jsx, after component <Child>")}
     </>
   );
 }

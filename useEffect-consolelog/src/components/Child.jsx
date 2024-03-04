@@ -2,14 +2,15 @@ import { useEffect } from "react";
 
 const Child = () => {
   useEffect(() => {
-    console.log("C: child useEffect");
+    console.log("D: child useEffect");
   }, []);
 
-  console.log("D: child console.log before return");
+  console.log("E: child console.log before return");
 
   return (
     <div>
-      <h1>Here is Child</h1>
+      <h2>Here is Child Component.</h2>
+      {console.log("F: child conosle.log in jsx")}
     </div>
   );
 };
