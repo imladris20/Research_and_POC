@@ -2,10 +2,10 @@ import { useEffect } from "react";
 
 const Child = () => {
   useEffect(() => {
-    console.log("child useEffect");
+    console.log("C: child useEffect");
   }, []);
 
-  console.log("child before return");
+  console.log("D: child console.log before return");
 
   return (
     <div>
