@@ -1,5 +1,5 @@
-const a = "10";
-const b = "10";
+const a = 10;
+const b = 10;
 
 const c = ["mina", "sana", "momo"];
 const d = ["mina", "sana", "momo"];

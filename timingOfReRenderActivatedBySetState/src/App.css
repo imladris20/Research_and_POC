@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+
+.firstBtn {
+  background-color: #fcc89b;
+  color: #334155;
+  margin-right: 12px;
+}
+
+.btn {
+  background-color: #fcc89b;
+  color: #334155;
+}
+
+h1 {
+  margin-top: 100px;
+  margin-bottom: 0px;
+}

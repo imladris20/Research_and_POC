@@ -1,87 +1,34 @@
 import { useState } from "react";
 import "./App.css";
+import List from "./Components/List";
+import Num from "./Components/Num";
 
 function App() {
-  const [list, setList] = useState(["Mina", "、", "Sana", "、", "Momo"]);
   const [number, setNumber] = useState(9);
 
-  const handleResetListButtonClick = () => {
-    const newMembers = ["Mina", "、", "Sana", "、", "Momo"];
-    setList(newMembers);
-  };
+  const originalList = ["Mina", "、", "Sana", "、", "Momo"];
+  const [list, setList] = useState(originalList);
 
-  const handleNewListButtonClick = () => {
-    const newMembers = ["Mina", "、", "Sana", "、", "Momo", "、", "Tzuyu"];
-    setList(newMembers);
-  };
-
-  const handleResetNumberButtonClick = (num) => {
-    setNumber(num);
-  };
-
-  console.log("有render");
+  console.log("App 有 rerender.");
 
   return (
     <div>
       <h1>setNumber 成一樣的數字會re-render嗎？</h1>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h3 style={{ marginRight: "8px", color: "#ff5fa2" }}>Number:</h3>
-        <h3>{number}</h3>
-      </div>
-      <button
-        onClick={() => handleResetNumberButtonClick(9)}
-        style={{
-          backgroundColor: "#FCC89B",
-          color: "#334155",
-          marginRight: "12px",
-        }}
-      >
+      <Num number={number} />
+      <button className="firstBtn" onClick={() => setNumber(9)}>
         setNumber to 9
       </button>
-      <button
-        onClick={() => handleResetNumberButtonClick(10)}
-        style={{
-          backgroundColor: "#FCC89B",
-          color: "#334155",
-        }}
-      >
+      <button className="btn" onClick={() => setNumber(10)}>
         setNumber to 10
       </button>
-      <h1>setList 成一樣的array內容會re-render嗎？</h1>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h3 style={{ marginRight: "8px", color: "#ff5fa2" }}>List:</h3>
-        {list.map((member, index) => {
-          return <h3 key={index}>{member}</h3>;
-        })}
-      </div>
-      <button
-        onClick={handleResetListButtonClick}
-        style={{
-          backgroundColor: "#FCC89B",
-          color: "#334155",
-          marginRight: "12px",
-        }}
-      >
-        setList to the same
+      <h1>setList 成一樣的陣列會re-render嗎？</h1>
+      <List list={list} />
+      <button className="firstBtn" onClick={() => setList([...originalList])}>
+        setList to original one
       </button>
       <button
-        onClick={handleNewListButtonClick}
-        style={{
-          backgroundColor: "#FCC89B",
-          color: "#334155",
-        }}
+        className="btn"
+        onClick={() => setList([...originalList, "、", "Tzuyu"])}
       >
         setList to new one
       </button>
