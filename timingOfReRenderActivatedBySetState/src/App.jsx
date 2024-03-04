@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     console.log("Inside in useEffect, Component 'App' just render.");
-  }, [[]]);
+  });
 
   return (
     <div>
