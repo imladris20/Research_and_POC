@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+
 const Num = ({ number }) => {
-  console.log("Num 有 rerender.");
+  console.log("Outside, Component 'num' just render.");
+
+  useEffect(() => {
+    console.log("Inside in useEffect, Component 'num' just render.");
+  }, [[]]);
 
   return (
     <div

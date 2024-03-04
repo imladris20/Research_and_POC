@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import List from "./Components/List";
 import Num from "./Components/Num";
 
 function App() {
   const [number, setNumber] = useState(9);
+  console.log("Outside, Component 'App' just render.");
 
-  const originalList = ["Mina", "、", "Sana", "、", "Momo"];
-  const [list, setList] = useState(originalList);
+  const [message, setMessage] = useState("TWICE");
 
-  console.log("App 有 rerender.");
+  useEffect(() => {
+    console.log("Inside in useEffect, Component 'App' just render.");
+  }, [[]]);
 
   return (
     <div>
-      <h1>setNumber 成一樣的數字會re-render嗎？</h1>
+      <h1>If we setNumber to same value, will react do re-render？</h1>
       <Num number={number} />
       <button className="firstBtn" onClick={() => setNumber(9)}>
         setNumber to 9
@@ -21,16 +22,9 @@ function App() {
       <button className="btn" onClick={() => setNumber(10)}>
         setNumber to 10
       </button>
-      <h1>setList 成一樣的陣列會re-render嗎？</h1>
-      <List list={list} />
-      <button className="firstBtn" onClick={() => setList([...originalList])}>
-        setList to original one
-      </button>
-      <button
-        className="btn"
-        onClick={() => setList([...originalList, "、", "Tzuyu"])}
-      >
-        setList to new one
+      <h1>{message}</h1>
+      <button className="btn" onClick={() => setMessage("ITZY")}>
+        setMessage
       </button>
     </div>
   );
