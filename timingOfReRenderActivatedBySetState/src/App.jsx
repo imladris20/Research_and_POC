@@ -26,6 +26,7 @@ function App() {
       <button className="btn" onClick={() => setMessage("ITZY")}>
         setMessage
       </button>
+      {console.log("haha")}
     </div>
   );
 }

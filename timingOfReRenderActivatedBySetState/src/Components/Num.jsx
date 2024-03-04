@@ -17,6 +17,7 @@ const Num = ({ number }) => {
     >
       <h3 style={{ marginRight: "8px", color: "#ff5fa2" }}>Number:</h3>
       <h3>{number}</h3>
+      {console.log("child haha")}
     </div>
   );
 };
